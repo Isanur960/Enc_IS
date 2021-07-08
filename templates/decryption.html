@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} Decryption
+{% endblock title %}
+
+{% block body %}
+<h1>Decryption Page</h1>
+<form action="/decryption" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <input type="file" id="file_id"  name="myfile_d"><br>
+    <div class="div_g_b">
+        <div id="in_div">
+            (optional) If you have used your own password at the time of encryption write the same password here.. 
+        </div>
+        <input type="text" id="key_id" name="in_key_d" placeholder='KEY'>
+    </div>
+    <br>
+    <button type="submit">Decrypt File</button>
+</form>
+file:{{fi}}
+<br>
+key:{{key}}
+<br>
+Message: {{msg}}
+{% endblock body %}

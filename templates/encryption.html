@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Encryption
+{% endblock title %}
+
+{% block body %}
+<h1>Encryption Page</h1>
+<form action="/encryption" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <input type="file" id="file_id"  name="myfile"><br>
+    <div class="div_g_b">
+        <div id="in_div">
+            (optional) If you want to give Password or Key write here or Website will<br>
+            generate a key and wll show you and give you the option for downloading it as TXT file .<br>
+            if you give less than 8 charecters in this field password or key will be auto generated .
+        </div>
+        <input type="text" id="key_id" name="in_key" placeholder='KEY'>
+    </div>
+    <br>
+    <button type="submit">Encrypt File</button>
+</form>
+file:{{fi}}
+<br>
+key:{{key}}
+<br>
+Message: {{msg}}
+{% endblock body %}

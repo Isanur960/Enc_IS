@@ -1,0 +1,6 @@
+AES - can be brute forced
+Triple DES 
+RSA
+Blowfish
+Twofish
+Rivest-Shamir-Adleman (RSA)

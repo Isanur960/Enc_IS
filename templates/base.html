@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon_io/site.webmanifest">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+<div style="color:red; font-style:italic;">THIS WEBSITE IS NOW ON BETA MODE<BR>
+IF YOU FIND ANY BUG OR ERROR KINDLY EMAIL ME ON <a style="color:red" href="mailto:sardarisanur@gmail.com">sardarisanur@gmail.com</a></div>
+<nav>
+<a href="/"> Home</a>
+<a href="/encryption">Encrypt your file</a>
+<a href="/decryption">Decrypt your file</a>
+<a href="/privacy_policy">Privacy Policy</a>
+<a href="#" style="color: red; border : 0px ;">Your ip is: {{ip}}</a>
+</nav>
+
+{% block body %}
+
+{% endblock body %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+csrfmiddlewaretoken
+
+
+import mimetypes
+
+
+def download_file(request):
+    # fill these variables with real values
+    fl_path = ‘/file/path'
+    filename = ‘downloaded_file_name.extension’
+
+    fl = open(fl_path, 'r’)
+    mime_type, _ = mimetypes.guess_type(fl_path)
+    response = HttpResponse(fl, content_type=mime_type)
+    response['Content-Disposition'] = "attachment; filename=%s" % filename
+        return response
+
+
+
+response = HttpResponse(my_data, headers={
+    'Content-Type': 'application/vnd.ms-excel',
+    'Content-Disposition': 'attachment; filename="foo.xls"',
+    })
+
+from django.http import HttpResponse
+from django.template import loader
+
+def my_view(request):
+    # View code here...
+    t = loader.get_template('myapp/index.html')
+    c = {'foo': 'bar'}
+    return HttpResponse(t.render(c, request), content_type='application/xhtml+xml')
